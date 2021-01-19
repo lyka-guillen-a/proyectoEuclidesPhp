@@ -1,0 +1,42 @@
+.header {
+  background: url(https://images.unsplash.com/photo-1528082992860-d520150d6f6c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80) no-repeat center;
+    background-size: cover;
+    min-height: 100vh;
+  }
+
+  .centrado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mark {
+  background-color: black;
+  color: white;
+}
+
+.modal-head {
+  padding:9px 15px;
+  border-bottom:1px solid #eee;
+  background-color: #ABE9AE ;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+}
+
+
+.modal-foot {
+  padding:9px 15px;
+  border-bottom:1px solid #eee;
+  background-color: #ABE9AE ;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+}
