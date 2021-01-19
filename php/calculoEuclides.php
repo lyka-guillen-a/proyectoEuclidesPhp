@@ -10,7 +10,7 @@ $determinarCapacidadRed = 0;
 
 if(!empty($_POST)){
 
-    /** CONEXIÓN CON LA BD */
+    /** CONEXIÓN CON LA BD ...*/
     $conexion=(mysqli_connect("remotemysql.com","sLmri09wJm","NKxZsWY6Yp"));
     mysqli_select_db($conexion,'sLmri09wJm') or die ("no se encuentra la bd");
 
