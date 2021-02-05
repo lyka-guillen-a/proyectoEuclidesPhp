@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Tarea Uno - B63199</title>
+  <title>Tarea Dos - B63199</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,21 +46,6 @@
 		</nav>
 
 
-			<div class="centrado">
-				<h1 style="color:#FFFFFF"; ><mark class="mark">¡Bienvenido a nuestra página web!</mark></h1>
-				<br>
-				<h3 style="color:#FFFFFF"; ><mark class="mark">Esta aplicación realiza predicciones utilizando el algoritmo de Euclides</mark></h3>
-				<br>
-				<br>
-				<h4 style="color:#FFFFFF"; ><mark class="mark">Instrucciones de uso de la aplicación:</mark></h4>
-				<p style="color:#FFFFFF";> <mark class="mark">1. Dirígete a la barra de menú ubicada en la parte superior. <br/> 
-										  2. Presiona sobre alguno de los items del menú. <br/> 
-										  3. Llena los datos solicitados. <br/> 
-										  4. Presiona en el botón al final del formulario, para calcular tus resultados. <br/> 
-										  5. Los resultados aparecerán justo por debajo del botón para calcular. <br/> </mark>
-				</p>
-
-			</div>
 
 	</header>
 
@@ -479,13 +464,13 @@
 						<div class="form-row">
 							<label >Promedio matricula: </label> 
 							<div class="col-2">
-								<input id="inPromNum" type="number" min="0" step="10" max="100" class="form-control" placeholder="">
+								<input id="inPromNum" type="number" min="6" step="1" max="9" class="form-control" placeholder="">
 							</div>
 							<label > , </label> 
 							<div class="col-2">
-								<input id="inPromDec" type="number" min="0" step="10" max="99" class="form-control" placeholder="">
+								<input id="inPromDec" type="number" min="0" step="10" max="99" class="form-control" placeholder="" disabled >
 							</div>
-							<label style=" font-weight: bold; font-size: 12px" >** utilice 2 decimales (00,00)</label> 
+							<label style=" font-weight: bold; font-size: 12px" >** utilice valores de entre 6 y 9 </label> 
 						</div>
 						<br>
 						<button id="btnCalcularRecinto" type="button" class="btn btn-light">Calcular Recinto</button>
@@ -539,13 +524,13 @@
 						<div class="form-row">
 							<label >Promedio matricula: </label> 
 							<div class="col-2">
-								<input id="inPromNum2" type="number" min="0" step="10" max="100" class="form-control" placeholder="">
+								<input id="inPromNum2" type="number" min="6" step="1" max="9" class="form-control" placeholder="" >
 							</div>
 							<label > , </label> 
 							<div class="col-2">
-								<input id="inPromDec2" type="number" min="0" step="10" max="99" class="form-control" placeholder="">
+								<input id="inPromDec2" type="number" min="0" step="10" max="99" class="form-control" placeholder="" disabled>
 							</div>
-							<label style=" font-weight: bold; font-size: 12px" >** utilice 2 decimales (00,00)</label> 
+							<label style=" font-weight: bold; font-size: 12px" >** utilice unicamente valores del 6 al 9</label> 
 						</div>
 						<br>
 						<button id="btnCalcularSexo" type="button" class="btn btn-light">Calcular Sexo</button>
@@ -597,13 +582,13 @@
 						<div class="form-row">
 							<label >Promedio matricula: </label> 
 							<div class="col-2">
-								<input id="inPromNum3" type="number" min="0" step="10" max="100" class="form-control" placeholder="">
+								<input id="inPromNum3" type="number" min="6" step="1" max="9" class="form-control" placeholder="">
 							</div>
 							<label > , </label> 
 							<div class="col-2">
-								<input id="inPromDec3" type="number" min="0" step="10" max="99" class="form-control" placeholder="">
+								<input id="inPromDec3" type="number" min="0" step="10" max="99" class="form-control" placeholder="" disabled>
 							</div>
-							<label style=" font-weight: bold; font-size: 12px" >** utilice 2 decimales (00,00)</label> 
+							<label style=" font-weight: bold; font-size: 12px" >** utilice unicamente valores del 6 al 9</label> 
 						</div>
 						<br>
 						<button id="btnCalcularEstilo2" type="button" class="btn btn-light">Calcular Estilo</button>
@@ -816,7 +801,7 @@
             var ruta = "ec="+ec+"&or="+ro+"&ca="+ca+"&ea="+ea;
 
             $.ajax({
-                url:"calculoEuclides.php",
+                url:"calculoByes.php",
                 type: 'POST',
                 data: ruta
             })
@@ -840,7 +825,9 @@
 		var ruta = "estilo="+estilo+"&sexo="+sexo+"&promNum="+promNum+"&promDec="+promDec;
 
 		$.ajax({
-			url:"calculoEuclides.php",
+			url:"calculoByes.php",
+			//para cargar la tabla de frecuencias
+		//	url:"determinaRecinto.php",
 			type: 'POST',
 			data: ruta
 		})
@@ -850,7 +837,7 @@
 
 	})
 
-	//Botón de enviar a determinar el recinto de procedencia
+	//Botón de enviar a determinar el sexo
 	$('#btnCalcularSexo').click(function(){
 		//var ec = $('#ECid').value();
 		var estilo = document.getElementById("slEstilo2").selectedIndex;
@@ -862,7 +849,9 @@
 		var ruta = "estilo="+estilo+"&recinto="+recinto+"&promNum="+promNum+"&promDec="+promDec;
 
 		$.ajax({
-			url:"calculoEuclides.php",
+			url:"calculoByes.php",
+			//para cargar la tabla de frecuencias
+			//url:"determinaSexo.php",
 			type: 'POST',
 			data: ruta
 		})
@@ -884,7 +873,9 @@
 		var ruta = "recinto="+recinto+"&sexxo="+sexxo+"&promNum="+promNum+"&promDec="+promDec;
 
 		$.ajax({
-			url:"calculoEuclides.php",
+			url:"calculoByes.php",
+			//calcula la tabla de frecuencias
+			//url:"determinaEstiloDos.php",
 			type: 'POST',
 			data: ruta
 		})
@@ -910,7 +901,9 @@
 		var ruta = "edad="+edad+"&genero="+genero+"&impartiendo="+impartiendo+"&times="+times+"&expertise="+expertise+"&skill="+skill+"&webBased="+webBased+"&webSite="+webSite;
 
 		$.ajax({
-			url:"calculoEuclides.php",
+			url:"calculoByes.php",
+			//calcula la tabla de frecuencias
+			//url:"determinaProfesor.php",
 			type: 'POST',
 			data: ruta
 		})

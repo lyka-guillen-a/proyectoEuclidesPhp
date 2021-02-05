@@ -201,7 +201,7 @@ if(!empty($_POST)){
         print_r("Tu tipo de profesor, según el algoritmo de euclides es: ".$result[$posMin]);
         $determinarTipoProfesor = 0;
     }else if($determinarCapacidadRed==1){
-        print_r("La clasificacion de red, según el algoritmo de euclides es: ".$result[$posMin]);
+        print_r("La clasificacion de red debe ser: ".$result[$posMin]);
         $determinarCapacidadRed = 0;
     }
 
